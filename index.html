@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumail's Website</title>
+    <title>Kumaildds's Website</title>
     <style>
         body {
             background-color: #000;
@@ -33,14 +33,36 @@
         .menu button:hover {
             background-color: #555;
         }
+        video {
+            width: 640px; /* Set the desired width for the video player */
+            margin-top: 20px; /* Space above the video */
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
     <h1>Kumail's Website</h1>
     <div class="menu">
-        <button onclick="window.location.href='movies/movie1.mp4'">Movie 1</button>
-        <button onclick="window.location.href='movies/movie2.mp4'">Movie 2</button>
-        <button onclick="window.location.href='movies/movie3.mp4'">Movie 3</button>
+        <button onclick="playVideo('https://kumail12345.github.io/movies/The.Flash.2014.S01E01.HDTV.x264-LOL.mp4')">Movie 1</button>
+        <button onclick="playVideo('https://kumail12345.github.io/movies/movie2.mp4')">Movie 2</button>
+        <button onclick="playVideo('https://kumail12345.github.io/movies/movie3.mp4')">Movie 3</button>
     </div>
+
+    <!-- Video player -->
+    <video id="videoPlayer" controls>
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        function playVideo(videoSrc) {
+            var player = document.getElementById('videoPlayer');
+            var source = document.getElementById('videoSource');
+            source.src = videoSrc; // Set the video source
+            player.load(); // Load the new video
+            player.style.display = 'block'; // Show the video player
+            player.play(); // Start playing the video
+        }
+    </script>
 </body>
 </html>
